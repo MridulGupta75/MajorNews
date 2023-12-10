@@ -1,0 +1,36 @@
+.main-container {
+    padding-top: 108px;
+    min-height: 100vh;
+    figure,
+    aside {
+        display: none;
+    }
+    img {
+        border-radius: 10px 0 10px;
+    }
+
+    .article-content {
+        max-width: 600px;
+        margin: 0 auto;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: left !important;
+            font-weight: bold;
+        }
+        .img-sub {
+            font-size: 90%;
+        }
+        a,
+        p {
+            color: #333;
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+}

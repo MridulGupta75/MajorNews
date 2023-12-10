@@ -1,0 +1,103 @@
+$menuCollapseBreakpoint: 992px;
+$searchBarHeight: 38px;
+
+.fixed-header {
+    z-index: 1;
+    width: 100%;
+}
+
+.header-container {
+    background: url('../../public/header-bg.jpg') no-repeat 0 0;
+    position: relative;
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.74);
+}
+
+.header-title {
+    background: transparent linear-gradient(to right, $blue, 45%, transparent);
+    border-radius: 0;
+
+    a {
+        text-decoration: none !important;
+    }
+
+    .page-title {
+        margin-bottom: 0;
+        color: #fff;
+        text-shadow: 0px 8px 3px rgba(0, 0, 0, 0.1),
+            5px 10px 3px rgba(0, 0, 0, 0.05), -5px 10px 3px rgba(0, 0, 0, 0.05);
+        white-space: pre;
+        @media screen and (max-width: $menuCollapseBreakpoint) {
+            font-size: 27px;
+        }
+    }
+}
+
+.navbar-dark.navbar {
+    transition: 0.3s max-height linear;
+    max-height: 520px;
+    background: darken($blue, 40%);
+    overflow: hidden;
+
+    &.collapse {
+        max-height: 38px;
+    }
+    .nav-item {
+        a {
+            color: rgba(255, 255, 255, 0.75);
+            @media screen and (max-width: $menuCollapseBreakpoint) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+        &:hover {
+            background-color: darken($blue, 43%);
+        }
+        &.active {
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    .navbar-toggler {
+        border: 0;
+        outline: 0 !important;
+        padding-right: 200px;
+    }
+
+    .search-bar {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+        @media screen and (max-width: $menuCollapseBreakpoint) {
+            width: calc(100% - 64px);
+        }
+
+        .has-search .form-control {
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            height: $searchBarHeight;
+            padding-right: $searchBarHeight;
+        }
+
+        .has-search .form-control-feedback {
+            position: absolute;
+            z-index: 2;
+            display: block;
+            width: $searchBarHeight;
+            height: $searchBarHeight;
+            line-height: $searchBarHeight;
+            text-align: center;
+            right: 0;
+            border: none;
+            color: #bbb;
+            cursor: pointer;
+            transition: 0.1s color linear;
+            top: 0;
+            &:hover {
+                color: #666;
+            }
+        }
+    }
+}
